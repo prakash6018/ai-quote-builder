@@ -18,16 +18,16 @@ A quoting tool for a machine shop. Upload a customer's engineering drawings and 
 
 ```mermaid
 flowchart LR
-  U[Upload drawings<br/>PNG/JPEG/WebP] --> X[Vision model<br/>strict JSON schema]
-  X --> Z{Zod validation<br/>+ confidence per field}
-  Z -- below 75% --> R[Estimator reviews<br/>flagged fields]
-  Z --> P[Pricing engine<br/>integer cents]
+  U["Upload drawings<br/>PNG/JPEG/WebP"] --> X["Vision model<br/>strict JSON schema"]
+  X --> Z{"Zod validation<br/>+ confidence per field"}
+  Z -- below 75% --> R["Estimator reviews<br/>flagged fields"]
+  Z --> P["Pricing engine<br/>integer cents"]
   R --> P
-  P --> V[Save version<br/>v1, v2, …]
-  V --> D{Deposit}
-  D --> S[Stripe Checkout] --> W1[Webhook<br/>signature + timestamp]
-  D --> RP[Razorpay Order] --> W2[Callback + webhook<br/>HMAC]
-  W1 & W2 --> L[Idempotent record<br/>amount check → paid, version locked]
+  P --> V["Save version<br/>v1, v2, …"]
+  V --> D{"Deposit"}
+  D --> S["Stripe Checkout"] --> W1["Webhook<br/>signature + timestamp"]
+  D --> RP["Razorpay Order"] --> W2["Callback + webhook<br/>HMAC"]
+  W1 & W2 --> L["Idempotent record<br/>amount check → paid, version locked"]
 ```
 
 ## What's in it
