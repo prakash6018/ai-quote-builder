@@ -1,5 +1,7 @@
 # ai-quote-builder
 
+[![CI](https://github.com/prakash6018/ai-quote-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/prakash6018/ai-quote-builder/actions/workflows/ci.yml)
+
 A quoting tool for a machine shop. Upload a customer's engineering drawings and a vision model reads each one: part name, material, dimensions, quantity, finish, tolerance, holes, bends. An estimator checks the fields the model wasn't sure about, the pricing engine quotes every part, and the customer pays a deposit through **Stripe** or **Razorpay**.
 
 **Next.js 15 · React 19 · TypeScript · Tailwind CSS v4 · TanStack Query · Zod · GPT-4o vision (any OpenAI-compatible endpoint) · Stripe · Razorpay**
